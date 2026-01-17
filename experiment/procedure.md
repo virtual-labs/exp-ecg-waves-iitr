@@ -1,6 +1,6 @@
 <div style="font-family: 'Nunito Sans', sans-serif; font-size: 20px; text-align: justify;">
 
-  <h2 style="margin-bottom: 10px;"> Procedure </h2>
+  <h3 style="margin-bottom: 10px;"> Procedure </h3>
 
   <p>
     <b>1. Signal Acquisition</b><br>
