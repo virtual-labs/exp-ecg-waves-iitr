@@ -1,11 +1,17 @@
-EMPTY
-<!-- Remove all lines above this line before making changes to the file -->
-### Subject Matter Experts
-| SNo. | Name | Email | Institute | ID |
-| :---: | :---: | :---: | :---: | :---: |
-| 1 | name | email | institute | id |
+## Contributors
 
-### Developers
-| SNo. | Name | Email | Institute | ID |
-| :---: | :---: | :---: | :---: | :---: |
-| 1 | name | email | institute | id |
+### Lab Proposer
+
+| S. No. |      Name      |                      Email                      |  Institute  |  Position |
+| :----: | :------------: | :---------------------------------------------: | :---------: | :-------: |
+|    1   | Prof. RS Anand | [anandfee@gmail.com](mailto:anandfee@gmail.com) | IIT Roorkee | Professor |
+
+### Developed by Virtual Labs Team IITR with support from
+
+| S. No. | Name                 | Email                                                     | Institute   | Position            |
+| :----: | :------------: | :---------------------------------------------------------: | :-----------: | :-------------------: |
+| 1      | Harishankar Kumar Ram     | [harishankar.ee@sric.iitr.ac.in](mailto:harishankar.ee@sric.iitr.ac.in) | IIT Roorkee | Project Associate |
+
+ 
+
+ 
