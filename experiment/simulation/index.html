@@ -1,13 +1,420 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ECG Analysis Virtual Lab</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-spacer"></div>
+
+      <span class="header-title"
+        >Identification and Determination of Different Wave Components in ECG
+        Signals</span
+      >
+      <button class="small-btn" id="btnInstructions">
+        <b>INSTRUCTIONS</b>
+      </button>
+    </header>
+
+    <div class="workspace">
+      <aside class="sidebar-column">
+        <div class="panel-card">
+          <div class="panel-header"><b>INPUT PANEL</b></div>
+          <div class="panel-body">
+            <div class="control-group">
+              <select id="signalSelect">
+                <option value="" disabled selected>Select Signal</option>
+                <option value="CSV Files/ecg1.csv">Signal 1</option>
+                <option value="CSV Files/ecg2.csv">Signal 2</option>
+                <option value="CSV Files/ecg3.csv">Signal 3</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <button id="btnLoad" class="btn-primary">Load Raw Signal</button>
+            </div>
+            <div class="control-group">
+              <button id="btnFilter" class="btn-secondary" disabled>
+                Filter Signal
+              </button>
+            </div>
+            <div class="control-group">
+              <div class="label-wrapper">
+                <label for="zoomSlider" class="label-small"
+                  >Time Interval:</label
+                >
+                <span id="zoomValue" class="value-display">10.0</span>s
+              </div>
+              <input
+                type="range"
+                id="zoomSlider"
+                min="0.5"
+                max="10"
+                step="0.1"
+                value="10"
+                disabled
+              />
+            </div>
+            <div class="control-group">
+              <button onclick="location.reload()" class="btn-danger">
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-header">AUTO ANALYSIS</div>
+          <div class="panel-body">
+            <p class="info-text">
+              Identify P, QRS, T & segments automatically.
+            </p>
+            <button id="btnAnalyze" class="btn-action" disabled>
+              Start Auto Analysis
+            </button>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-header">MANUAL LABELLING</div>
+          <div class="panel-body">
+            <div style="display: flex; gap: 5px; align-items: center">
+              <button
+                id="btnManualStart"
+                class="btn-primary"
+                style="flex: 1"
+                disabled
+              >
+                Start Labelling
+              </button>
+            </div>
+
+            <div
+              id="gifContainer"
+              class="hidden"
+              style="
+                background: #f8f9fa;
+                border: 1px solid #ddd;
+                padding: 5px;
+                border-radius: 4px;
+                text-align: center;
+                margin-top: 5px;
+              "
+            >
+              <p style="font-size: 0.75rem; color: #666; margin-bottom: 5px">
+                Follow the sequence below:
+              </p>
+              <img
+                src="Manual_Labelling.gif"
+                alt="Manual Labelling Steps"
+                style="width: 100%; height: auto; border-radius: 3px"
+              />
+            </div>
+
+            <div id="manualControls" class="hidden">
+              <p class="instruction-text" id="manualInstruction">
+                Select P-Wave Start
+              </p>
+              <button id="btnManualReset" class="btn-secondary">Restart</button>
+            </div>
+            <button id="btnCrossCheck" class="btn-success hidden">
+              Cross-Check
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="graph-area">
+        <div id="rawContainer" class="chart-wrapper hidden">
+          <canvas id="rawChart"></canvas>
+        </div>
+
+        <div id="scrollContainer" class="scroll-wrapper hidden">
+          <span class="scroll-icon" id="scrollLabel">↔</span>
+
+          <input
+            type="range"
+            id="scrollSlider"
+            min="0"
+            max="100"
+            value="0"
+            step="0.1"
+            disabled
+          />
+        </div>
+
+        <div id="filteredContainer" class="chart-wrapper hidden">
+          <canvas id="filteredChart"></canvas>
+        </div>
+
+        <div id="emptyState">
+          <div class="empty-icon">📈</div>
+
+          <p>Select a signal from the Control Panel to begin.</p>
+        </div>
+
+        <div class="legend-box hidden" id="analysisLegend">
+          <div class="panel-header">COLOR REFERENCE</div>
+
+          <div class="legend-grid">
+            <div class="legend-item">
+              <span class="swatch line-p"></span> P-Wave (Line)
+            </div>
+
+            <div class="legend-item">
+              <span class="swatch line-qrs"></span> QRS (Line)
+            </div>
+
+            <div class="legend-item">
+              <span class="swatch line-t"></span> T-Wave (Line)
+            </div>
+
+            <div class="legend-item">
+              <span class="swatch bg-pq"></span> PQ Segment
+            </div>
+
+            <div class="legend-item">
+              <span class="swatch bg-qrs"></span> QRS Interval
+            </div>
+
+            <div class="legend-item">
+              <span class="swatch bg-st"></span> ST Segment
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <aside class="info-panel">
+        <div class="panel-header">RESULTS</div>
+
+        <div id="detailsContent" class="panel-body">
+          <div class="control-group">
+            <p class="info-text"><strong>Current Beat:</strong> -</p>
+            <p class="info-text"><strong>QRS Peak Amplitude:</strong> -</p>
+            <p class="info-text"><strong>QRS Duration:</strong> -</p>
+            <p class="info-text"><strong>R-R Interval:</strong> -</p>
+            <p class="info-text"><strong>Heart Rate:</strong> -</p>
+          </div>
+        </div>
+
+        <div class="panel-header" style="border-top: 1px solid #eee">
+          WAVE DESCRIPTION
+        </div>
+
+        <div id="descriptionContent" class="panel-body">
+          <div id="waveDescDefault">
+            <p class="info-text">
+              An ECG signal represents the electrical activity of the heart,
+              showing the depolarization and repolarization of the atria and
+              ventricles.
+            </p>
+          </div>
+
+          <div id="waveDescDynamic" class="hidden">
+            <strong id="descTitle" style="font-size: 0.8rem"></strong>
+
+            <p id="descText" class="info-text" style="margin-top: 5px"></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div class="modal-overlay" id="modalOverlay">
+      <article class="modal" id="modalContent">
+        <h3
+          style="
+            border-bottom: 2px solid #1a5376;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+          "
+        >
+          Experiment Instructions
+        </h3>
+
+        <div
+          style="
+            height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+            line-height: 1.5;
+            color: #444;
+            font-size: 0.9rem;
+          "
+        >
+          <div class="instruction-step">
+            <b>1. Signal Acquisition:</b> Select a dataset (ECG 1, 2, or 3) from
+            the Input Panel and click on
+            <span class="badge">Load Raw Signal</span> button. The raw (noisy)
+            signal will appear in red.
+          </div>
+
+          <div class="instruction-step">
+            <b>2. Pre-processing:</b> Click on
+            <span class="badge">Filter Signal</span> button. This applies a
+            Butterworth filter to remove baseline wander and high-frequency
+            noise. The clean signal (blue) will appear below.
+          </div>
+
+          <div class="instruction-step">
+            <b>3. Signal Analysis:</b> Choose one of the two methods below to
+            identify wave components.
+
+            <div class="sub-instruction-box">
+              <strong class="sub-header">A. Auto Analysis (Algorithmic)</strong>
+              <p style="margin: 0">
+                Click on
+                <button
+                  class="btn-action"
+                  style="padding: 2px 8px; width: auto; font-size: 0.75rem"
+                >
+                  Start Auto Analysis</button
+                >. The system will automatically:
+              </p>
+              <ul style="margin: 5px 0 5px 20px; padding: 0">
+                <li>Detect R-peaks (High precision).</li>
+                <li>
+                  Highlight <span style="color: #e74c3c">P-wave</span>,
+                  <span style="color: #3498db">QRS</span>, and
+                  <span style="color: #2ecc71">T-wave</span> boundaries.
+                </li>
+                <li>
+                  Calculate Heart Rate and Intervals in the Results Panel.
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-instruction-box">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <strong class="sub-header"
+                  >B. Manual Labelling (Interactive)</strong
+                >
+                <button
+                  id="btnToggleGifModal"
+                  style="
+                    background: #e74c3c;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    padding: 4px 10px;
+                    font-size: 0.75rem;
+                    cursor: pointer;
+                  "
+                >
+                  ▼ Visual Guide
+                </button>
+              </div>
+
+              <div
+                id="gifModalContainer"
+                class="hidden"
+                style="
+                  background: #fff;
+                  border: 1px solid #ddd;
+                  padding: 10px;
+                  border-radius: 4px;
+                  margin-top: 8px;
+                  text-align: center;
+                "
+              >
+                <p style="font-size: 0.8rem; margin-bottom: 5px">
+                  <strong>Sequence:</strong> P-Start → P-End → QRS-Start →
+                  QRS-End → T-Start → T-End
+                </p>
+                <img
+                  src="Manual_Labelling.gif"
+                  alt="Manual Labelling Animation"
+                  style="
+                    width: 100%;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                  "
+                />
+              </div>
+
+              <p style="margin-top: 5px">
+                Click on
+                <button
+                  class="btn-primary"
+                  style="
+                    padding: 2px 8px;
+                    width: auto;
+                    font-size: 0.75rem;
+                    background-color: #1a5376;
+                  "
+                >
+                  Start Labelling</button
+                >. You must click on the graph <strong>6 times</strong> in this
+                exact order:
+              </p>
+              <ol style="margin: 5px 0 5px 20px; padding: 0">
+                <li>
+                  <span class="click-sequence">P-Wave Onset</span> (Start)
+                </li>
+                <li><span class="click-sequence">P-Wave Offset</span> (End)</li>
+                <li><span class="click-sequence">QRS Onset</span> (Start)</li>
+                <li><span class="click-sequence">QRS Offset</span> (End)</li>
+                <li>
+                  <span class="click-sequence">T-Wave Onset</span> (Start)
+                </li>
+                <li><span class="click-sequence">T-Wave Offset</span> (End)</li>
+              </ol>
+              <p
+                style="
+                  margin: 5px 0 0 0;
+                  font-size: 0.85rem;
+                  font-style: italic;
+                "
+              >
+                Once finished, a "Cross-Check" button will appear to compare
+                your marks against the algorithm.
+              </p>
+            </div>
+          </div>
+
+          <div class="instruction-step">
+            <b>4. Navigation & Details:</b>
+            <ul style="margin: 5px 0 5px 20px; padding: 0">
+              <li>
+                <strong>Snap-to-Beat:</strong> Use the scrollbar to jump between
+                individual heartbeats.
+              </li>
+              <li>
+                <strong>Hover:</strong> Move your mouse over any colored wave
+                component to see its medical description and duration.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <b>5. Reset:</b> Click on <strong>Reset</strong> button to clear all
+            data and start a new experiment.
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <footer class="bottom-banner">
+      ©Copyright 2025 Virtual Labs, IIT Roorkee
+    </footer>
+
+    <script src="js/data.js"></script>
+
+    <script src="js/page.js"></script>
+  </body>
 </html>
