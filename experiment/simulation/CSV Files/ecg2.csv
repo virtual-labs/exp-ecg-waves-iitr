@@ -1,4 +1,4 @@
-time_sec,ECG_I,ECG_I_filtered
+time_sec,ECG_II,ECG_II_filtered
 0.0,-0.13,-0.01
 0.002,-0.18,-0.01
 0.004,-0.105,-0.01
