@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Which ECG component is most reliable for heart rate calculation in a Lead II ECG?",
+    "answers": {
+      "a": "P wave",
+      "b": "T wave",
+      "c": "R wave",
+      "d": "ST segment"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "If the P wave is absent but QRS complexes are present, it may indicate:",
+    "answers": {
+      "a": "Normal sinus rhythm",
+      "b": "Ventricular repolarization",
+      "c": "Atrial rhythm abnormality",
+      "d": "ST elevation"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "Which ECG segment is used as the baseline reference for measuring ST deviation?",
+    "answers": {
+      "a": "TP segment",
+      "b": "ST segment",
+      "c": "PQ segment",
+      "d": "QT interval"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "A very low-amplitude QRS in limb leads may suggest:",
+    "answers": {
+      "a": "Normal ECG",
+      "b": "High heart rate",
+      "c": "Low-voltage ECG",
+      "d": "SA node failure"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "A wide QRS complex (>120 ms) usually indicates:",
+    "answers": {
+      "a": "Normal conduction",
+      "b": "Atrial enlargement",
+      "c": "Ventricular conduction delay",
+      "d": "High heart rate"
+    },
+    "correctAnswer": "c"
+  }
+]

@@ -1,0 +1,32 @@
+
+/home/runner/work/exp-ecg-waves-iitr/exp-ecg-waves-iitr/experiment/simulation/js/data.js
+   1:7   warning  'SignalProcessor' is assigned a value but never used  no-unused-vars
+  57:27  warning  'qrsBaseline' is assigned a value but never used      no-unused-vars
+
+/home/runner/work/exp-ecg-waves-iitr/exp-ecg-waves-iitr/experiment/simulation/js/page.js
+   25:7   warning  'descTitle' is assigned a value but never used     no-unused-vars
+   26:7   warning  'descText' is assigned a value but never used      no-unused-vars
+   47:7   warning  'manualStatus' is assigned a value but never used  no-unused-vars
+  115:21  warning  'SignalProcessor' is not defined                   no-undef
+  126:64  warning  'SignalProcessor' is not defined                   no-undef
+  152:9   warning  'Swal' is not defined                              no-undef
+  166:26  warning  'SignalProcessor' is not defined                   no-undef
+  202:9   warning  'Swal' is not defined                              no-undef
+  211:22  warning  'SignalProcessor' is not defined                   no-undef
+  228:9   warning  'Swal' is not defined                              no-undef
+  242:9   warning  'Swal' is not defined                              no-undef
+  256:21  warning  'SignalProcessor' is not defined                   no-undef
+  272:25  warning  'SignalProcessor' is not defined                   no-undef
+  280:78  warning  'SignalProcessor' is not defined                   no-undef
+  290:49  warning  'SignalProcessor' is not defined                   no-undef
+  292:49  warning  'SignalProcessor' is not defined                   no-undef
+  409:25  warning  'SignalProcessor' is not defined                   no-undef
+  451:30  warning  'SignalProcessor' is not defined                   no-undef
+  483:28  warning  'Chart' is not defined                             no-undef
+  503:33  warning  'Chart' is not defined                             no-undef
+  530:33  warning  'SignalProcessor' is not defined                   no-undef
+  583:7   warning  'btnToggleGif' is assigned a value but never used  no-unused-vars
+  584:7   warning  'gifContainer' is assigned a value but never used  no-unused-vars
+
+✖ 25 problems (0 errors, 25 warnings)
+

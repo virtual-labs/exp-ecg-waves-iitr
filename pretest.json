@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Which ECG component corresponds to ventricular depolarization?",
+    "answers": {
+      "a": "P wave",
+      "b": "T wave",
+      "c": "ST segment",
+      "d": "QRS complex"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "question": "Which lead is most commonly used for rhythm analysis and wave detection?",
+    "answers": {
+      "a": "Lead I",
+      "b": "Lead II",
+      "c": "Lead III",
+      "d": "aVR"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "The PQ  segment represents conduction through the:",
+    "answers": {
+      "a": "R wave",
+      "b": "QRS complex",
+      "c": "P wave",
+      "d": "ST Segment"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": " Which component is most affected by muscle noise and baseline wander?",
+    "answers": {
+      "a": "P wave",
+      "b": "QRS complex",
+      "c": "P wave",
+      "d": "ST Segment"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "Why is R peak detection commonly performed first in ECG analysis?",
+    "answers": {
+      "a": "It has lowest amplitude",
+      "b": "It is easiest to detect due to high slope and amplitude",
+      "c": "It represents atrial activity",
+      "d": "It has no clinical importance"
+    },
+    "correctAnswer": "b"
+  }
+]

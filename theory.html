@@ -1,0 +1,875 @@
+<!DOCTYPE html><html lang="en"><head>
+      <!--Google Tag Manager-->
+      <script class="gtm">
+        var dataLayer = [{
+        'labName': 'Virtual Lab',
+        'discipline': 'Test',
+        'college': 'IITR',
+        'phase': 'Testing',
+        'expName': 'IDENTIFICATION AND DETERMINATION OF DIFFERENT WAVE COMPONENTS IN ECG SIGNALS',
+        'expShortName': 'ecg-waves'
+        }];
+    
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5NMQ9NQ');
+      </script>
+      <!--End Google Tag Manager-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    
+    	<meta name="experiment-short-name" content="ecg-waves">
+    	<meta name="developer-institute" content="IITR">
+    	<meta name="learning-unit" content="IDENTIFICATION AND DETERMINATION OF DIFFERENT WAVE COMPONENTS IN ECG SIGNALS">
+    	<meta name="task-name" content="Theory">
+    
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#4076e0">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#4076e0">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#4076e0">
+    <title>Virtual Labs</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Raleway&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/github-markdown.min.css">
+    <link rel="stylesheet" href="./assets/css/vlabs-style.css">
+    <link rel="stylesheet" href="./assets/css/toast.css">
+    <link rel="stylesheet" href="./assets/katex_assets/katex.min.css">
+    
+    <script src="./assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      h1 {
+      font-size: 1.8rem;
+      }
+      h2 {
+      font-size: 1.4rem;
+      }
+      h3 {
+      font-size: 1.2rem;
+      }
+
+      h2, h3 {
+      font-weight: 800;
+      }
+    </style>
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"></head>
+  <body class="p-0 container-fluid vlabs-page d-flex flex-column justify-content-between">
+      <!--Google Tag Manager (noscript)-->
+      <noscript class="gtm">
+        <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5NMQ9NQ" style="display:none;visibility:hidden" width="0">
+        </iframe>
+      </noscript>
+      <!--End Google Tag Manager (noscript)-->
+  
+      <header class="vlabs-header sticky-top bg-white">
+        <nav class="p-0 navbar navbar-light d-flex align-items-stretch">
+          
+          <button class="navbar-toggler px-4" type="button" onclick="toggle()">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="d-flex justify-content-center">        
+            <a href="https://vlab.co.in" class="navbar-brand">
+              <img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+            </a>
+          </div>
+          
+          <div id="headerNavbar" class="d-none border-top flex-grow-1 d-lg-flex align-items-center justify-content-end">
+            <div class="svc-rating-display">
+                <rating-display spreadsheetid="1x12nhpp0QvnsA6x-O1sV4IA9SAbfVsq_wiexWkutOmU" sheetname="Experiment-Database" columnname="Experiment Short Name" columnvalue="ecg-waves" imagesdirectory="/plugins/svc-rating/images/">
+                </rating-display>
+            </div>      <div class="svc-rating-submit">
+                <rating-submit title="Rate" this="" experiment="">
+                </rating-submit>
+            </div>      <bug-report id="bug-report" title="[BUG REPORT] IDENTIFICATION AND DETERMINATION OF DIFFERENT WAVE COMPONENTS IN ECG SIGNALS" page-type="text" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;IITR&quot;,&quot;expname&quot;:&quot;IDENTIFICATION AND DETERMINATION OF DIFFERENT WAVE COMPONENTS IN ECG SIGNALS&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" button_style="border: none; color: #fff; background-color: #288ec8; text-align: center; font-size: 1.05rem; border-radius: 1em;padding: 0.6em 1.2em; margin: 0 10px" position="override" custom_button_class="v-button"></bug-report>
+          </div>
+        </nav>
+      </header>
+      <div class="container-fluid flex-fill d-flex flex-column vlabs-page-main">
+        <div class="row d-flex justify-content-between">
+          <div class="flex-column">
+          <div class="row py-4 px-4 breadcrumbs">
+          	<div class="title is-4 tools">Tools</div>
+          	<span class="mx-2">
+          		<i aria-hidden="true" class="fa fa-angle-right"></i>
+          	</span>
+          	<a href="performance-report.html" class="my-2 mx-3" target="_blank">
+          		<button class="v-button">Performance Tool</button>
+          	</a>
+          	<a href="validator-report.html" class="my-2 mx-3" target="_blank">
+          		<button class="v-button">Validation Tool</button>
+          	</a>
+          </div>
+          </div>
+        </div>
+        <div class="row flex-grow-1 d-flex flex-nowrap flex-column flex-lg-row">
+          <div class="modal fade popupmenu" id="popupMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                              <a href="https://vlab.co.in" class="navbar-brand">
+                                  <img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+                              </a>
+                          </h5>
+                          <button type="button" class="btn-close align-self-center" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body nav-menu">
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="index.html" class="p-2 ">
+                                      Aim
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="theory.html" class="p-2  current-item ">
+                                      Theory
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="pretest.html" class="p-2 ">
+                                      Pretest
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="procedure.html" class="p-2 ">
+                                      Procedure
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="simulation.html" class="p-2 ">
+                                      Simulation
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="posttest.html" class="p-2 ">
+                                      Posttest
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="references.html" class="p-2 ">
+                                      References
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="contributors.html" class="p-2 ">
+                                      Contributors
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="feedback.html" class="p-2 ">
+                                      Feedback
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="nav flex-column sidebar nav-menu flex-shrink-0 px-lg-4 align-items-center align-items-lg-start hidden d-none d-lg-flex" id="menu">
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="index.html" class="p-2 ">
+                        Aim
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="theory.html" class="p-2  current-item ">
+                        Theory
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="pretest.html" class="p-2 ">
+                        Pretest
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="procedure.html" class="p-2 ">
+                        Procedure
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="simulation.html" class="p-2 ">
+                        Simulation
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="posttest.html" class="p-2 ">
+                        Posttest
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="references.html" class="p-2 ">
+                        References
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="contributors.html" class="p-2 ">
+                        Contributors
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="feedback.html" class="p-2 ">
+                        Feedback
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+          </div>          <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+            <div class="text-center fix-spacing">
+              <h2 id="identification-and-determination-of-different-wave-components-in-ecg-signals">Identification and Determination of Different Wave Components in ECG Signals</h2>
+          
+            </div>
+              <div style="font-family: 'Nunito Sans', sans-serif; font-size: 20px; text-align: justify;">
+              
+            <style>
+              h4, h4, h4, h4, h5, h6 {
+                text-decoration: none !important;
+                border-bottom: none !important;
+                box-shadow: none !important;
+              }
+            </style>
+            <!-- ===================== MAIN HEADING (H1) ===================== -->
+            <h4 style="font-size: 34px; font-weight: bold; margin-bottom: 10px;">
+              Introduction
+            </h4>
+          
+            <p>
+              The <b>Electrocardiogram (ECG)</b> is a <b>non-invasive biomedical signal</b> that records the electrical activity of the heart over time. It is obtained by placing electrodes on the body surface, which capture voltage changes produced during cardiac <b>depolarization</b> and <b>repolarization</b>. The ECG waveform consists of characteristic components such as the <b>P wave</b>, <b>QRS complex</b>, and <b>T wave</b>, each corresponding to specific electrical events within the heart. A clean and properly recorded ECG signal plays an important role in the clinical analysis and diagnosis of cardiac conditions, as it provides critical information related to heart rhythm, conduction pathways, and overall cardiac function.
+            </p>
+          
+            <!-- ===================== MAIN HEADING (H1) ===================== -->
+            <h4 style="font-size: 34px; font-weight: bold; margin-top: 25px; margin-bottom: 10px;">
+              Purpose of Identifying Individual ECG Wave Components
+            </h4>
+          
+            <p>
+              Each component of the ECG waveform (<b>P</b>, <b>Q</b>, <b>R</b>, <b>S</b>, and <b>T</b>) corresponds to a specific <b>physiological event</b> occurring during the cardiac cycle. Correct identification of these wave components is essential because it helps in understanding how the electrical impulse travels through different regions of the heart and whether the heart is functioning normally.
+            </p>
+          
+            <ul>
+              <li><b>P wave:</b> Represents <b>atrial depolarization</b>, which is the electrical activation of the upper chambers of the heart (<b>atria</b>).</li>
+              <li><b>QRS complex:</b> Represents <b>ventricular depolarization</b>, which is the electrical activation of the lower chambers (<b>ventricles</b>). It is the most prominent part of the ECG due to its high amplitude and rapid slope.</li>
+              <li><b>T wave:</b> Represents <b>ventricular repolarization</b>, which is the recovery phase of the ventricles after contraction and pumping of blood.</li>
+            </ul>
+          
+            <br>
+            <center>
+              <img src="images/ecg_comp1.png" style="width: 550px;" alt="ECG Components">
+            </center>
+            <br>
+            <center>
+              <b>Figure-1: Components of ECG</b>
+            </center>
+            <br>
+          
+            <p>
+              Identifying and measuring these components helps clinicians determine whether the heart rhythm and conduction system are normal or if any <b>abnormalities</b> are present. For example, the <b>duration of the QRS complex</b> and the <b>time intervals between waves</b> can indicate <b>conduction delays</b> or possible <b>ischemic damage</b>. A prolonged or widened QRS complex may suggest that the electrical signal is moving slowly inside the heart, while changes in the timing and spacing between waves can reflect underlying heart-related disorders that require further medical evaluation.
+            </p>
+          
+            <!-- ===================== MAIN HEADING (H1) ===================== -->
+            <h4 style="font-size: 34px; font-weight: bold; margin-top: 25px; margin-bottom: 10px;">
+              ECG Leads and Selection of Lead II
+            </h4>
+          
+            <p>
+              This study focuses on identifying key ECG wave components using <b>Lead II</b> of the standard <b>12-lead ECG configuration</b>. Lead II is widely used because it aligns closely with the heart’s <b>electrical axis</b>, making the <b>P wave</b> and <b>QRS complex</b> more prominent and easier to detect than in many other leads. Analysis of Lead II provides clear and reliable measurements for waveform <b>timing</b> and <b>amplitude</b>, making it highly suitable for rhythm interpretation and component identification.
+            </p>
+          
+            <!-- ===================== SUB-HEADING (H2) ===================== -->
+            <h4 style="font-size: 28px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">
+              Standard Limb Leads (I, II, III)
+            </h4>
+          
+            <p>
+              The standard ECG system uses three <b>bipolar limb leads</b>—<b>Lead I</b>, <b>Lead II</b>, and <b>Lead III</b>—to record the heart’s electrical activity in the <b>frontal plane</b>. These leads are formed by placing electrodes on the <b>right arm (RA)</b>, <b>left arm (LA)</b>, and <b>left leg (LL)</b>.
+            </p>
+          
+            <ul>
+              <li><b>Lead I:</b> Measures the voltage difference between <b>LA (+)</b> and <b>RA (−)</b>.</li>
+              <li><b>Lead II:</b> Measures the voltage difference between <b>LL (+)</b> and <b>RA (−)</b>.</li>
+              <li><b>Lead III:</b> Measures the voltage difference between <b>LL (+)</b> and <b>LA (−)</b>.</li>
+            </ul>
+          
+            <p>
+              Each lead records the same cardiac electrical activity but from a different angle, producing different waveform shapes and amplitudes. A fundamental principle derived from this configuration is <b>Einthoven’s Law</b>, which states:
+            </p>
+          
+            <center>
+              <b>Lead II = Lead I + Lead III</b>
+            </center>
+          
+            <!-- ===================== MAIN HEADING (H1) ===================== -->
+            <h4 style="font-size: 34px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;">
+              Standard ECG Waveform Components
+            </h4>
+          
+            <!-- ===================== SUB-HEADING (H2) ===================== -->
+            <h4 style="font-size: 28px; font-weight: bold; margin-top: 15px;">
+              Table 1: P Wave Characteristics (Lead II ECG)
+            </h4>
+          
+            <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; margin-bottom: 25px;">
+              <tbody><tr>
+                <th>Parameter</th>
+                <th>Details</th>
+              </tr>
+              <tr>
+                <td><b>Physiological Significance</b></td>
+                <td>Represents <b>atrial depolarization</b> (electrical activation of atria), starting from the <b>SA node</b> and spreading through both atria.</td>
+              </tr>
+              <tr>
+                <td><b>Normal Duration</b></td>
+                <td><b>&lt; 120 ms (0.12 s)</b> in adults</td>
+              </tr>
+              <tr>
+                <td><b>Normal Amplitude (Lead II / Limb Leads)</b></td>
+                <td>Normal upper limit <b>&lt; 0.25 mV (2.5 mm)</b> in limb leads (<b>Lead II</b> is commonly used for P-wave assessment).</td>
+              </tr>
+              <tr>
+                <td><b>Clinical Importance</b></td>
+                <td>
+                  • <b>Increased P-wave duration</b> may indicate <b>delayed atrial conduction</b> (atrial enlargement / conduction disease).<br>
+                  • High P-wave amplitude in Lead II (<b>&gt; 0.25–0.30 mV</b>) may indicate <b>Right Atrial Enlargement</b> (<b>P pulmonale</b>).
+                </td>
+              </tr>
+            </tbody></table>
+          
+            <!-- ===================== SUB-HEADING (H2) ===================== -->
+            <h4 style="font-size: 28px; font-weight: bold; margin-top: 15px;">
+              Table 2: QRS Wave Characteristics (Lead II ECG)
+            </h4>
+          
+            <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; margin-bottom: 25px;">
+              <tbody><tr>
+                <th>Parameter</th>
+                <th>Details</th>
+              </tr>
+              <tr>
+                <td><b>Physiological Significance</b></td>
+                <td>Represents <b>rapid ventricular depolarization</b>, as the electrical impulse travels through the <b>His–Purkinje system</b> and activates the ventricular muscle.</td>
+              </tr>
+              <tr>
+                <td><b>Normal QRS Duration</b></td>
+                <td>
+                  Measured from the <b>start of Q</b> (or <b>R if Q is absent</b>) to the <b>end of S</b>.<br>
+                  Normal duration: <b>60–100 ms</b>, and clinically normal if <b>&lt; 120 ms</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><b>Normal QRS Amplitude (Lead II)</b></td>
+                <td>
+                  Varies among individuals due to body structure and electrode placement.<br>
+                  In Lead II, the <b>R wave is usually prominent</b> (often around <b>~1 mV</b> in many normal ECGs),
+                  making Lead II useful for teaching and detection.
+                </td>
+              </tr>
+              <tr>
+                <td><b>Clinical Importance</b></td>
+                <td>
+                  • <b>Wide QRS (≥ 120 ms)</b> suggests <b>ventricular conduction delay</b> (e.g., bundle branch block) or ventricular-origin beats.<br>
+                  • <b>Very low QRS voltage in limb leads (&lt; 0.5 mV)</b> can be clinically significant (e.g., pericardial effusion, obesity, COPD).<br>
+                  • QRS duration and shape standards are defined in professional guidelines.
+                </td>
+              </tr>
+            </tbody></table>
+          
+            <!-- ===================== SUB-HEADING (H2) ===================== -->
+            <h4 style="font-size: 28px; font-weight: bold; margin-top: 15px;">
+              Table 3: T Wave Characteristics (Lead II ECG)
+            </h4>
+          
+            <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; margin-bottom: 25px;">
+              <tbody><tr>
+                <th>Parameter</th>
+                <th>Details</th>
+              </tr>
+              <tr>
+                <td><b>Ventricular Repolarization</b></td>
+                <td>The <b>T wave</b> represents <b>ventricular repolarization</b>, which is the electrical recovery of the ventricles after contraction.</td>
+              </tr>
+              <tr>
+                <td><b>Normal Amplitude (and note on duration)</b></td>
+                <td>
+                  T wave amplitude is usually <b>&lt; 5 mm (0.5 mV)</b> in limb leads.<br>
+                  T-wave duration is not always measured separately; it is commonly evaluated as part of the <b>QT interval</b>, and clinical guidelines mainly focus on <b>ST–T shape (morphology)</b> and QT measurement standards.
+                </td>
+              </tr>
+              <tr>
+                <td><b>Polarity in Lead II</b></td>
+                <td>In a normal ECG, the <b>T wave is typically upright (positive)</b> in <b>Lead II</b>.</td>
+              </tr>
+            </tbody></table>
+          
+            <!-- ===================== SUB-HEADING (H2) ===================== -->
+            <h4 style="font-size: 28px; font-weight: bold; margin-top: 15px;">
+              Table 4: PQ (PR) Segment Characteristics (Lead II ECG)
+            </h4>
+          
+            <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; margin-bottom: 25px;">
+              <tbody><tr>
+                <th>Parameter</th>
+                <th>Details</th>
+              </tr>
+              <tr>
+                <td><b>Definition and Location</b></td>
+                <td>
+                  The <b>PQ (PR) segment</b> is the flat (<b>isoelectric</b>) part of the ECG that starts at the <b>end of the P wave</b> and ends at the <b>beginning of the QRS complex</b>.
+                  It lies between <b>atrial depolarization</b> and <b>ventricular depolarization</b>.<br><br>
+                  <b>Note:</b><br>
+                  • <b>PR interval = P wave + PQ segment</b><br>
+                  • <b>PQ segment = only the flat baseline portion</b>
+                </td>
+              </tr>
+              <tr>
+                <td><b>Electrical Activity Represented</b></td>
+                <td>
+                  Represents:<br>
+                  • Impulse conduction through the <b>AV node</b><br>
+                  • Conduction through the <b>His bundle</b> and <b>bundle branches</b><br>
+                  • A normal delay that allows ventricles to fill before contraction
+                </td>
+              </tr>
+              <tr>
+                <td><b>Reason for Flat Line</b></td>
+                <td>Since <b>AV nodal conduction is slow</b> and produces very small electrical signals, it appears as a <b>flat line</b> on the ECG.</td>
+              </tr>
+            </tbody></table>
+          
+            <!-- ===================== SUB-HEADING (H2) ===================== -->
+            <h4 style="font-size: 28px; font-weight: bold; margin-top: 15px;">
+              Table 5: ST Segment Characteristics (Lead II ECG)
+            </h4>
+          
+            <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; margin-bottom: 25px;">
+              <tbody><tr>
+                <th>Parameter</th>
+                <th>Details</th>
+              </tr>
+              <tr>
+                <td><b>Definition and Baseline Reference</b></td>
+                <td>
+                  The <b>ST segment</b> starts from the <b>end of the QRS complex (J point)</b> and ends at the <b>beginning of the T wave</b>.
+                  It represents the time between <b>ventricular depolarization</b> and <b>ventricular repolarization</b>.
+                  The ST segment is measured using the <b>isoelectric baseline</b>, which is commonly taken from the <b>PQ segment</b>
+                  because it shows the most stable baseline (electrical neutrality).
+                </td>
+              </tr>
+              <tr>
+                <td><b>Normal Characteristics in Lead II</b></td>
+                <td>
+                  In a normal ECG, the <b>ST segment is flat (isoelectric)</b> in Lead II.
+                  Small variations up to <b>±0.5 mm</b> may be considered normal depending on age and body physiology.
+                  Lead II is often used for ST baseline comparison because its waveform is usually <b>clear and stable</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><b>Physiological Meaning</b></td>
+                <td>
+                  The flat ST segment represents the <b>plateau phase (Phase 2)</b> of the ventricular action potential.
+                  During this phase, there is <b>no major net electrical current</b> detected on the body surface,
+                  so the line appears flat.
+                </td>
+              </tr>
+            </tbody></table>
+          
+            <br>
+          
+            <!-- ===================== MAIN HEADING (H1) ===================== -->
+            <h4 style="font-size: 34px; font-weight: bold; margin-top: 25px; margin-bottom: 10px;">
+              Detection of Different ECG Waveforms &amp; Segments
+            </h4>
+            <br>
+            <!-- ===================== SUB-HEADING (H2) ===================== -->
+            <h4 style="font-size: 28px; font-weight: bold; margin-top: 15px; margin-bottom: 10px;">
+              1. QRS Complex Detection Using the Pan–Tompkins Algorithm
+            </h4>
+          
+            <p>
+              The Pan–Tompkins method is a classical real-time QRS detection algorithm designed to emphasize the
+              high-frequency and high-slope characteristics of the QRS complex while suppressing baseline drift,
+              muscle noise, and low-slope components such as P and T waves. The algorithm employs a sequential
+              processing chain.
+            </p>
+          
+            <!-- ===================== SUB-SUB HEADING (H3) ===================== -->
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">a. Band-pass filtering</h4>
+            <p style="margin-left: 2%;">
+              Band-pass filtering is applied to suppress baseline wander and high-frequency noise while retaining
+              the frequency band in which the QRS complex has dominant energy. This improves the signal-to-noise
+              ratio and enhances QRS visibility in subsequent stages.
+            </p>
+          
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">b. Differentiation</h4>
+            <p style="margin-left: 2%;">
+              A derivative operator is applied to highlight rapid changes in the ECG waveform. Since the QRS
+              complex exhibits the steepest slopes in the ECG, the differentiation stage increases the prominence
+              of QRS components relative to slower waves.
+            </p>
+          
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">c. Squaring</h4>
+            <p style="margin-left: 2%;">
+              The differentiated signal is squared, making all values positive and amplifying larger slope
+              magnitudes more than smaller ones. This operation strengthens QRS-related transitions and reduces
+              the relative influence of lower-amplitude components.
+            </p>
+          
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">d. Moving window integration</h4>
+            <p style="margin-left: 2%;">
+              A moving window integrator is used to produce a smoother energy envelope that reflects both the
+              intensity and duration of the QRS complex. A window length on the order of approximately 150 ms is
+              typically used to match physiological QRS width.
+            </p>
+          
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">e. Adaptive thresholding and decision logic</h4>
+            <p style="margin-left: 2%;">
+              Peak detection is performed on the integrated signal using an adaptive threshold. The threshold is
+              continuously updated based on noise and signal peak levels to maintain stability under varying ECG
+              amplitudes and noise conditions. Peaks exceeding the threshold are classified as candidate QRS
+              complexes. The precise R-peak location is then refined using the corresponding maximum in the
+              filtered ECG signal within a narrow search region. The final output of this stage consists of accurately detected R-peaks, which serve as reference
+              landmarks for identifying all remaining waveform components.
+            </p>
+          
+            <center>
+              <img src="images/qrs 2.png" style="width: 550px;" alt="QRS Detection">
+            </center>
+            <br>
+            <center>
+              <b>Figure-2: QRS Detection Output</b>
+            </center>
+          
+            <!-- ===================== SUB-HEADING (H2) ===================== -->
+            <h4 style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 10px;">
+              2. P Wave Detection
+            </h4>
+          
+            <p>
+              The P wave represents atrial depolarization and typically occurs before each QRS complex. After obtaining
+              R-peak locations, P wave detection can be performed using a time-constrained search strategy.
+            </p>
+          
+            <!-- ===================== SUB-SUB HEADING (H3) ===================== -->
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">a. Search region definition</h4>
+            <p style="margin-left: 2%;">
+              For each detected R-peak, a backward search window is defined in the range of approximately 120 to 200 ms
+              before the R-peak. This window corresponds to the expected physiological position of the P wave in normal rhythm.
+            </p>
+          
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">b. Peak identification</h4>
+            <p style="margin-left: 2%;">
+              Within the defined window, the most prominent deflection is identified as the P wave peak. A minimum amplitude
+              criterion is often applied to reduce the probability of selecting noise fluctuations. Further refinement may be
+              performed by smoothing the local segment to improve stability in low-amplitude signals. The output of this stage includes P wave peak time and amplitude, along with the estimated P wave onset and offset
+              when delineation is required.
+            </p>
+          
+            <!-- ===================== SUB-HEADING (H2) ===================== -->
+            <h4 style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 10px;">
+              3. T Wave Detection
+            </h4>
+          
+            <p>
+              The T wave represents ventricular repolarization and follows the QRS complex. Because it has lower slope than QRS
+              but higher amplitude than the P wave in many recordings, it is typically detected reliably using a forward search
+              window after R-peak localization.
+            </p>
+          
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">a. Search region definition</h4>
+            <p style="margin-left: 2%;">
+              For each R-peak, a forward window is defined approximately 200 to 400 ms after the R-peak, covering the expected
+              position of the T wave peak in normal conduction.
+            </p>
+          
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">b. Peak identification</h4>
+            <p style="margin-left: 2%;">
+              Within the forward window, the dominant repolarization deflection is identified as the T wave peak. Since the T
+              wave is broader than QRS, moderate smoothing improves robustness and reduces sensitivity to high-frequency noise.
+              The output includes the T wave peak time and amplitude and may be extended to determine T onset and T end when
+              interval measurement is required.
+            </p>
+          
+            <!-- ===================== SUB-HEADING (H2) ===================== -->
+            <h4 style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 10px;">
+              4. PQ Segment Delineation
+            </h4>
+          
+            <p>
+              The PQ segment, also referred to as the PR segment, is a clinically important portion of the ECG that extends from the
+              end of the P wave to the onset of the QRS complex. It represents the period during which the electrical impulse travels
+              through the atrioventricular node and the His–Purkinje conduction system before ventricular depolarization begins.
+              In waveform terms, the PQ segment is typically isoelectric and is therefore commonly used as a reference baseline for
+              segment-level measurements such as ST deviation assessment.
+            </p>
+          
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">a. PQ segment boundary estimation</h4>
+            <p style="margin-left: 2%;">
+              Accurate delineation of the PQ segment requires identification of two key fiducial points: the end of the P wave and
+              the onset of the QRS complex. Following R-peak detection, the P wave is localized within a physiological window before
+              the QRS complex. The P wave offset is estimated as the point where the atrial depolarization waveform returns to the
+              baseline after the P peak. The onset of the QRS complex is identified as the earliest significant deviation from the
+              baseline preceding the R peak, typically associated with the Q-wave initiation or the beginning of the rapid upstroke
+              of the QRS complex.
+            </p>
+          
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">b. PQ segment measurement</h4>
+            <p style="margin-left: 2%;">
+              Once the P wave offset and QRS onset are determined, the PQ segment is defined as the interval between these points.
+              The duration of the PQ segment is computed as the time difference between P offset and QRS onset. In addition to its
+              timing, the mean amplitude of the PQ segment may be calculated to establish an isoelectric baseline reference, which is
+              particularly useful for detecting deviations in the ST segment.
+            </p>
+          
+            <!-- ===================== SUB-HEADING (H2) ===================== -->
+            <h4 style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 10px;">
+              5. ST Segment Delineation
+            </h4>
+          
+            <p>
+              The ST segment is a clinically significant portion of the ECG that begins at the end of ventricular depolarization
+              and extends to the onset of ventricular repolarization. In waveform terms, the ST segment spans from the J point,
+              located at the termination of the QRS complex, to the beginning of the T wave. Accurate ST segment delineation is
+              essential for assessing ischemic changes, including ST elevation and ST depression, relative to the isoelectric baseline.
+            </p>
+          
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">a. J point estimation</h4>
+            <p style="margin-left: 2%;">
+              The J point occurs near the end of the QRS complex and represents the transition from ventricular depolarization to
+              the early phase of repolarization. After locating the R-peak, the S-wave is identified as the negative deflection
+              following the R peak in Lead II. The endpoint of the QRS complex can then be estimated based on the return of the
+              ECG waveform toward the baseline, or by detecting a reduction in signal slope and energy following the S-wave.
+              This estimated termination point is used as the J point for subsequent ST analysis.
+            </p>
+          
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">b. ST level and baseline reference</h4>
+            <p style="margin-left: 2%;">
+              ST deviation is assessed by comparing the ST level to an isoelectric baseline. The baseline is commonly taken from
+              the PR segment, as it typically represents electrical neutrality. A representative ST level is often measured at a
+              fixed offset after the J point, such as 60 ms to 80 ms, to reduce sensitivity to minor fluctuations immediately at
+              the QRS termination.
+            </p>
+          
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">c. T wave onset estimation</h4>
+            <p style="margin-left: 2%;">
+              The onset of the T wave marks the end of the ST segment. It is estimated as the point where the ECG trace begins its
+              gradual rise or fall toward the T wave peak. This transition can be detected using slope-based criteria, where a
+              sustained change in the derivative indicates the start of repolarization. Baseline-crossing rules and local smoothing
+              are also commonly applied to improve robustness in the presence of noise.
+            </p>
+          
+            <h4 style="margin-left: 2%; font-size: 22px; font-weight: bold;">d. ST segment measurement</h4>
+            <p style="margin-left: 2%;">
+              Once the J point and T wave onset have been identified, the ST segment duration is calculated as the time difference
+              between these two fiducial points. The ST segment amplitude is quantified by measuring the voltage displacement of the
+              ST level relative to the baseline. The resulting parameters include ST segment timing, ST level, and ST deviation values,
+              which collectively support clinical interpretation and automated diagnostic screening.
+            </p>
+          
+          </div>
+          
+          
+          </div>
+          <div class="bug-report-mobile">
+              <bug-report id="bug-report" title="[BUG REPORT] IDENTIFICATION AND DETERMINATION OF DIFFERENT WAVE COMPONENTS IN ECG SIGNALS" page-type="text" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;IITR&quot;,&quot;expname&quot;:&quot;IDENTIFICATION AND DETERMINATION OF DIFFERENT WAVE COMPONENTS IN ECG SIGNALS&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" position="override" button_style="
+                          position: fixed; 
+                          bottom: 20px;
+                          right: 20px;
+                          z-index: 1;
+                          font-size: 0;
+                          padding: 25px;
+                          border-radius: 50%;
+                          border: none;
+                          background-color: #0fc0ff;
+                          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAABiFJREFUaEPFmVuMFEUUhv/TM7uwoBGVyG22u7ZnYGG5REETo8RA1BhFIka8ABFf0PCgDxhFEpCLqAlE1OiTiSj4gFGjD0QBETQaEqPRICALSHdPV+8YQQJBA+wuO1PHdMNcWGame2ZWqMfuc/nq1KlT1acJAzhShjFVAUsYdL8G3HjRdA7gHwna5uahLR91dnaeb9QlNWrA1+/o6GjuPnv2DQ30LICKNhk4qLF63PK8g434rejATJhjKa6m9WazOzOZzKlKTmYAcc8QnxEwJwqIAk5STpvpZJwD1eTHjR43PKflhtkZ2+ovVxbaTJiTSVM/gzCYGIebu4fc1nmi80w5J0nDWA7Qq1GACzLMR3pV7pZMJtNdTs/UzelE6msAQ0BYb7vuS6VyZaGTungGhPfygkRYZ7nusv4OEonEDc2xuEfA0JqgATBhieO6b/fXE0IM1pgPECgVvGP+x/bksFDo1JhUguPZI8FMAz0+zzFtSjqd9p8VRlJvew7E79QKHNgEDjrSndRfNyXEGmasLK4KttmeOysU2hdIGm0vA/xKUZh32VLeW6psCrGMmO+uB5qIeEh398P7jx8/m9cP9pGm9vtpmQ9WjHDzUSkPRYJOpVKDuK9vP0Dj8goMfsSR8ot6IKPoJI22XUBpEHitLWUx6heNVC15pmHMItCXBYeKPUZsLlFWVYNQsVg2nU7v82XaW1tHZ4lGhUEztOlEKOQ4A/b5XHZyuc0aWqdNIbYSY3aY00veM/9te3KE/ywlxGpmrKpJP8h5ftCR8qtyeqHQY3XdVNAO5vMskvMGoRWrT9Ke90QlX6HQF6N16Y4OI28Ampn/jatcxx+ZzJ8NQScSiZZBWvzJwAhhJoCKUQhkaoVmnAZoJcC9WowOH02nf6gWl0iRLpQk3ZwOym0n0DVVg10rNAAF7Ig1xedYltUbtpCRoZO6Po1J+z7S6VcHdLCIClusLnfBgED7NVv1ZX8lYGKYwbrSo8Qogxc4Um5pOD1Mo20DgZ+PBFxPTpcYJuBUljDRdd1jdW/EcYnEmKwWSxNR05WADnwo2mB3pV+oGzopxDowlkYGbjDSF9ILpwd1D2mtdB2uuhEv3D+yfwG4/opCB5WVnrZk+v1yfqtCJ3X9TpC2pybggYj0BYcf29KdXwe0WArCuqsCzSxtT4qq0GareStIXXo3JjxGwNSrAh0crMFFq3jYEJ9wpPygkB6mYZwg0PCaAcsp1Hm4RPFtS5eK0LpxvqayVs3DlYIO7r0K8xUhlufRGKNrupLmFQcImsEZBhWaOxq4y5ZyRvXqIcSnYDwaZdkukRkgaGqK32RZ1on+/qt/buliFRFWXxXokonXBJ3S22Yz8darAc2sdjqed1/NddpvnMQUHwPRdTWBD0R6EBbbrltoGJX6D71PJ3V9E0h76kpCMzirNTWNLpfPPkcodNDXi6m9QLGqhE6gwUgzaKMj04sq+QmF9hVrjnYj0IwejmvtjuN4DUEbhjEqztgLoqCXEToagQavsKV8rZqPSJH2DaSEmMGMXZHSpE5oZnzneK7fL8w1DJ1sTU6CltvEwPj/88OWwRYx77Y9b3HD0KYuvqUL/Y5oo85I542TooesrnTF8yE0PUwh5hGj6tfxZTNpEBqKvUE9QyfW9bnV3t5+bV9P7yECxuTBFGOvRn5v5eJgTLzsUhUFmuGCcLJoBiNL/ZT7bVFYiWrrnTSM9QC9WBSmzy2ZnluqI4QYGQcWM/O8Qi+7EjSjB4xtTNqHjuf4HVHO20q1tiZZi/k/j1r8Z8zcRxyfanfZv/dnrJgeYw1jQo6xr+SOfY5j2oRq9VMIIWLA7QSMslz3raDGG8ZMJhoPpR1QmvrFdd2eSoFKGm0rAF5bfM97bCnvKp2c/64idFLXd4C0woWFwMstKV+PthPrk/L/R/aeOfcbCBOKq8uLLCk3llos/0tON+8hUt+U5O1Rao5PjtIcrA+3qOWvDEC78wFlIO1I1wyFTuptC0G8uWSZHrCl3N4oUFT9NiE2a4yFQW6DLUfKsaHQU0aMGHq2pWULM98Bpncdzy35yxXVdf1yftXK9vS8CUVjtBjWHHXdn0qt/Qf/x1JblU8EiAAAAABJRU5ErkJggg==);
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          background-size: 30px;
+                          filter: invert(1);">
+              </bug-report>
+          </div>        </div>
+      </div>
+      <footer class="text-light pt-2 vlabs-footer d-flex flex-column">
+        <div class="row px-5 mx-0">
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Community Links</span>
+            <a href="https://www.sakshat.ac.in/" class="text-light">Sakshat Portal</a>
+            <a href="http://outreach.vlabs.ac.in/" class="text-light">Outreach Portal</a>
+            <a href="https://vlab.co.in/faq" class="text-light">FAQ: Virtual Labs</a>
+          </div>
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Contact Us</span>
+            <span> Phone: General Information: 011-26582050 </span>
+            <span> Email: support@vlabs.ac.in </span>
+          </div>
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Follow Us</span>
+            <div class="social-links">
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #55acee;" href="https://twitter.com/TheVirtualLabs">
+      	  <i class="fab fa-twitter"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #3b5998;" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/">
+      	  <i class="fab fa-facebook"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #e52d27;" href="https://www.youtube.com/watch?v=asxRaOgk6a0">
+      	  <i class="fab fa-youtube"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #2867B2;" href="https://in.linkedin.com/in/virtual-labs-008ba9136">
+      	  <i class="fab fa-linkedin"></i>
+      	</a>
+            </div>
+          </div>
+        </div>
+        <div class="m-0 py-2 text-center" style="font-family: &quot;Open Sans&quot;, sans-serif; background: #212121;">
+          <a class="text-primary font-weight-bold" href="https://www.gnu.org/licenses/agpl-3.0.en.html"> AGPL 3.0 </a>
+          &nbsp;&amp;&nbsp;
+          <a class="text-primary font-weight-bold" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> Creative Commons (CC BY-NC-SA 4.0) </a>
+        </div>
+      </footer>
+    <script src="./assets/js/toggleSidebar.js"></script>
+    <script src="./assets/js/event-handler.js"></script>
+
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register("sw.js");
+        });
+      }
+    </script>
+  
+
+<script type="module" src="https://cdn.vlabs.ac.in/bug-report/vlabs-bug-report.js"></script><script type="module" src="/exp-ecg-waves-iitr/plugins/svc-rating/index.js"></script><script type="module" src="/exp-ecg-waves-iitr/plugins/svc-rating/config.js"></script><script type="module" src="https://apis.google.com/js/api.js"></script></body></html>
