@@ -13,6 +13,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+    
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
 
   <body>
@@ -35,17 +38,17 @@
           <div class="panel-body">
             <div class="control-group">
               <select id="signalSelect">
-                <option value="" disabled selected>Select Signal</option>
-                <option value="CSV Files/ecg1.csv">Signal 1</option>
-                <option value="CSV Files/ecg2.csv">Signal 2</option>
-                <option value="CSV Files/ecg3.csv">Signal 3</option>
+                <option value="" disabled selected>Select Dataset</option>
+                <option value="CSV Files/ecg1.csv">Dataset 1</option>
+                <option value="CSV Files/ecg2.csv">Dataset 2</option>
+                <option value="CSV Files/ecg3.csv">Dataset 3</option>
               </select>
             </div>
             <div class="control-group">
               <button id="btnLoad" class="btn-primary">Load Raw Signal</button>
             </div>
             <div class="control-group">
-              <button id="btnFilter" class="btn-secondary" disabled>
+              <button id="btnFilter" class="btn-secondary">
                 Filter Signal
               </button>
             </div>
@@ -80,7 +83,7 @@
             <p class="info-text">
               Identify P, QRS, T & segments automatically.
             </p>
-            <button id="btnAnalyze" class="btn-action" disabled>
+            <button id="btnAnalyze" class="btn-action">
               Start Auto Analysis
             </button>
           </div>
@@ -94,7 +97,6 @@
                 id="btnManualStart"
                 class="btn-primary"
                 style="flex: 1"
-                disabled
               >
                 Start Labelling
               </button>
@@ -164,6 +166,26 @@
           <p>Select a signal from the Control Panel to begin.</p>
         </div>
 
+        <!-- Legend for Manual Labelling (Only Waves) -->
+        <div class="legend-box hidden" id="manualLegend">
+          <div class="panel-header">COLOR REFERENCE</div>
+
+          <div class="legend-grid">
+            <div class="legend-item">
+              <span class="swatch line-p"></span> P-Wave (Line)
+            </div>
+
+            <div class="legend-item">
+              <span class="swatch line-qrs"></span> QRS (Line)
+            </div>
+
+            <div class="legend-item">
+              <span class="swatch line-t"></span> T-Wave (Line)
+            </div>
+          </div>
+        </div>
+
+        <!-- Legend for Auto Analysis (All Components) -->
         <div class="legend-box hidden" id="analysisLegend">
           <div class="panel-header">COLOR REFERENCE</div>
 
@@ -238,7 +260,7 @@
             margin-bottom: 15px;
           "
         >
-          Experiment Instructions
+          Instructions
         </h3>
 
         <div

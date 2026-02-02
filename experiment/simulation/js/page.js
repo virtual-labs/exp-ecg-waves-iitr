@@ -37,6 +37,7 @@ const emptyState = document.getElementById('emptyState');
 const rawContainer = document.getElementById('rawContainer');
 const filteredContainer = document.getElementById('filteredContainer');
 const analysisLegend = document.getElementById('analysisLegend');
+const manualLegend = document.getElementById('manualLegend');
 
 const btnManualStart = document.getElementById('btnManualStart');
 const btnManualReset = document.getElementById('btnManualReset');
@@ -102,12 +103,12 @@ function stopManualLabelling() {
 };
 // Modal Logic
 els.btnInstructions.addEventListener('click', (e) => {
-    e.stopPropagation();
-    els.modalOverlay.style.display = 'flex';
+    e.stopPropagation();
+    els.modalOverlay.style.display = 'flex';
 });
 
 els.modalOverlay.addEventListener('click', (e) => {
-    if (e.target === els.modalOverlay) els.modalOverlay.style.display = 'none';
+    if (e.target === els.modalOverlay) els.modalOverlay.style.display = 'none';
 });
 // NEW: Function to calculate and update results
 function updateResultsPanel(beatIndex) {
@@ -147,7 +148,15 @@ function updateResultsPanel(beatIndex) {
 
 btnLoad.addEventListener('click', () => {
     const fileUrl = signalSelect.value;
-    if (!fileUrl) return alert("Please select a signal.");
+    if (!fileUrl) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'No Signal Selected',
+            text: 'Please select a signal to be loaded.',
+            confirmButtonColor: '#1a5376'
+        });
+        return;
+    }
     
     stopManualLabelling();
 
@@ -170,11 +179,8 @@ btnLoad.addEventListener('click', () => {
             analysisLegend.classList.add('hidden');
             // --------------------------------
 
-            btnFilter.disabled = false;
             zoomSlider.disabled = false;
             scrollSlider.disabled = false;
-            btnAnalyze.disabled = true;
-            btnManualStart.disabled = true;
 
             const maxTime = timeData[timeData.length - 1];
             scrollSlider.min = 0;
@@ -192,6 +198,16 @@ btnLoad.addEventListener('click', () => {
 });
 
 btnFilter.addEventListener('click', () => {
+    if (rawSignal.length === 0) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'No Signal Loaded',
+            text: 'Please load the raw signal first.',
+            confirmButtonColor: '#1a5376'
+        });
+        return;
+    }
+    
     filteredSignal = SignalProcessor.applyButterworth(rawSignal);
     
     // --- NEW VISIBILITY LOGIC ---
@@ -205,23 +221,38 @@ btnFilter.addEventListener('click', () => {
     
     // Force a resize update on the raw chart so it fits the new 50% height
     if (rawChartInstance) rawChartInstance.resize(); 
-
-    btnAnalyze.disabled = false; 
-    btnManualStart.disabled = false;
 });
 
 btnAnalyze.addEventListener('click', () => {
+    if (filteredSignal.length === 0) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Please load and filter the signal before starting auto-analysis.',
+            confirmButtonColor: '#1a5376'
+        });
+        return;
+    }
+    
     stopManualLabelling(); // NEW: Requirement met
     performAutoAnalysis();
 });
 
 btnManualStart.addEventListener('click', () => {
+    if (filteredSignal.length === 0) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Please load and filter the signal before starting manual labelling.',
+            confirmButtonColor: '#1a5376'
+        });
+        return;
+    }
+    
     rawContainer.classList.add('hidden');
     filteredContainer.classList.add('full-height');
     btnManualStart.classList.add('hidden');
     manualControls.classList.remove('hidden');
-    btnAnalyze.disabled = true;
     btnCrossCheck.classList.add('hidden');
+    
     const results = SignalProcessor.detectComponents(filteredSignal, timeData);
     setupSnapScrolling(results.peakTimes);
     resetManualMode();
@@ -406,13 +437,17 @@ btnCrossCheck.addEventListener('click', () => {
         filteredChartInstance.update('none'); 
     }
     
-    analysisLegend.classList.remove('hidden');
+    manualLegend.classList.remove('hidden');
 });
 
 function performAutoAnalysis() {
     rawContainer.classList.add('hidden');
     filteredContainer.classList.add('full-height');
+    
+    // Show analysis legend, hide manual legend
     analysisLegend.classList.remove('hidden');
+    manualLegend.classList.add('hidden');
+    
     const detectionResults = SignalProcessor.detectComponents(filteredSignal, timeData);
     setupSnapScrolling(detectionResults.peakTimes); 
     const filterPoints = timeData.map((t, i) => ({x: t, y: filteredSignal[i]}));
